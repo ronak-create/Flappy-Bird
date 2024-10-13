@@ -476,6 +476,17 @@
       }
     });
 
+    document.addEventListener("touchstart", function(evet){
+        if (PLAYER_CONTROLS_ON){
+            player.jump();
+        }
+        if (!GAME_PLAYING){
+            resetGame();
+            GAME_PLAYING = true;
+            PLAYER_CONTROLS_ON = true;
+        }
+    });
+
     update();
   };
 })();
